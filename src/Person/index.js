@@ -1,27 +1,27 @@
 import React from 'react';
 
-
 export default class Person extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            name: '',
-            gender: '',
+            hometown: 'wuhan',
+            gender: 'man',
             age: 10,
             score: (Math.random()*100).toFixed(2)
         }
-        this.handleOnNameChange = this.handleOnNameChange.bind(this)
+        this.handleOnHometownChange = this.handleOnHometownChange.bind(this)
         this.handleOnGenderChange = this.handleOnGenderChange.bind(this)
         this.handleOnAgeChange = this.handleOnAgeChange.bind(this)
         this.handleClick = this.handleClick.bind(this)
     }
 
+
     handleClick() {
-        window.confirm('hello world');
+        window.confirm('hello world')
     }
 
-    handleOnNameChange(e){
-        this.setState({name: e.target.value})
+    handleOnHometownChange(e){
+        this.setState({hometown: e.target.value})
     }
 
     handleOnAgeChange(e){
@@ -33,26 +33,29 @@ export default class Person extends React.Component {
     }
 
 
-
     render(){
-        const {name, gender, age, score} = this.state;
+        const {hometown, gender, age, score} = this.state;
         return (
         <div>
             <h2>Person</h2>
             <div>
-                <label htmlFor="name">
-                    Name: 
+                <label htmlFor="hometown">
+                Hometown: 
                 </label>
-                <input value={name} id="name" onChange={this.handleOnNameChange} />
+                <select onChange={this.handleOnHometownChange} selected={hometown}>
+                    <option value="wuhan" >wuhan</option>
+                    <option value="shanghai" >shanghai</option>
+                    <option value="beijing" >beijing</option>
+                </select>
             </div>
 
             <div style={{marginTop: 20}}>
                 <label htmlFor="gender">
                     Gender:
                 </label>
-                <select onChange={this.handleOnGenderChange}>
-                    <option value="man" selected={gender}>man</option>
-                    <option value="woman" selected={gender}>women</option>
+                <select onChange={this.handleOnGenderChange} selected={gender}>
+                    <option value="man" >man</option>
+                    <option value="woman" >women</option>
                 </select>
             </div>
             
