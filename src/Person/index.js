@@ -6,8 +6,8 @@ export default class Person extends React.Component {
         this.state = {
             hometown: 'wuhan',
             gender: 'man',
-            age: 10,
-            score: (Math.random()*100).toFixed(2)
+            age: Math.random().toFixed(2) * 50,
+            score: Math.round(Math.random().toFixed(2) * 100)
         }
         this.handleOnHometownChange = this.handleOnHometownChange.bind(this)
         this.handleOnGenderChange = this.handleOnGenderChange.bind(this)

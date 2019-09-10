@@ -26,7 +26,7 @@ export default class Homepage extends React.Component {
             <h2>Homepage</h2>
             <div style={{marginTop: 20}}>
                 <label htmlFor="grade">
-                    Gender:
+                    Grade:
                 </label>
                 <select id="grade" onChange={this.handleOnGradeChange} selected={grade}>
                     <option value="senior" >senior</option>
